@@ -590,7 +590,7 @@
       <div class="fade-in">
         <div class="mockup-grid">
           <div class="mockup-item">
-            <img src="Images/home-mockup.png.webp" alt="Home Screen" />
+            <img src="Images/home-mockup.png.webp" onclick="openLightbox(this.src)" style="cursor:zoom-in; height:320px; alt="Home Screen" />
             <div class="mockup-label">Home Screen</div>
           </div>
           <div class="mockup-item">
@@ -690,6 +690,23 @@
     // Init
     initFadeIns();
   </script>
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.9); z-index:9999; align-items:center; justify-content:center; cursor:zoom-out;">
+  <img id="lightbox-img" src="" style="max-height:90vh; max-width:90vw; border-radius:12px; object-fit:contain;" />
+</div>
 
+<script>
+  function openLightbox(src) {
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = src;
+    lb.style.display = 'flex';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
 </body>
 </html>
