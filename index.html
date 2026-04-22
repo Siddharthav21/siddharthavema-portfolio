@@ -12,7 +12,6 @@
     :root {
       --dark-green: #094020;
       --lime: #DFFCA1;
-      --lime-dark: #B8D470;
       --white: #FAFFF5;
       --off-white: #F2F9E8;
       --muted: #4A6A4A;
@@ -25,38 +24,18 @@
     a { text-decoration: none; color: inherit; }
     img { display: block; max-width: 100%; }
 
-    /* NAV */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0 48px; height: 64px;
-      transition: all 0.3s ease;
-    }
-    .nav.scrolled {
-      background: rgba(250,255,245,0.95);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(16px);
-    }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 0 48px; height: 64px; transition: all 0.3s ease; }
+    .nav.scrolled { background: rgba(250,255,245,0.95); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); }
     .nav-logo { display: flex; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; }
-    .nav-logo-circle {
-      width: 30px; height: 30px; border-radius: 50%;
-      background: var(--dark-green); display: flex; align-items: center; justify-content: center;
-    }
+    .nav-logo-circle { width: 30px; height: 30px; border-radius: 50%; background: var(--dark-green); display: flex; align-items: center; justify-content: center; }
     .nav-logo-circle span { font-size: 10px; font-weight: 600; color: var(--lime); letter-spacing: -0.02em; }
     .nav-logo-text { font-size: 14px; font-weight: 500; color: var(--dark-green); }
     .nav-links { display: flex; gap: 32px; align-items: center; }
     .nav-link { font-size: 13px; color: var(--muted); cursor: pointer; transition: color 0.2s; }
     .nav-link:hover { color: var(--dark-green); }
-    .nav-link-accent {
-      font-size: 13px; color: var(--dark-green);
-      border-bottom: 1px solid var(--dark-green); padding-bottom: 1px;
-    }
+    .nav-link-accent { font-size: 13px; color: var(--dark-green); border-bottom: 1px solid var(--dark-green); padding-bottom: 1px; }
 
-    /* FADE IN ANIMATION */
-    .fade-in {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
     .fade-in[data-delay="1"] { transition-delay: 0.1s; }
     .fade-in[data-delay="2"] { transition-delay: 0.2s; }
@@ -64,86 +43,40 @@
     .fade-in[data-delay="4"] { transition-delay: 0.4s; }
     .fade-in[data-delay="5"] { transition-delay: 0.5s; }
 
-    /* BUTTONS */
-    .btn-primary {
-      display: inline-block; background: var(--dark-green); color: var(--lime);
-      border: none; border-radius: 100px; padding: 15px 32px;
-      font-size: 14px; font-weight: 500; cursor: pointer;
-      font-family: inherit; transition: opacity 0.2s; text-decoration: none;
-    }
+    .btn-primary { display: inline-block; background: var(--dark-green); color: var(--lime); border: none; border-radius: 100px; padding: 15px 32px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit; transition: opacity 0.2s; text-decoration: none; }
     .btn-primary:hover { opacity: 0.85; }
-    .btn-ghost {
-      display: inline-block; background: transparent; color: var(--dark-green);
-      border: 1.5px solid var(--dark-green); border-radius: 100px; padding: 14px 32px;
-      font-size: 14px; cursor: pointer; font-family: inherit;
-      transition: background 0.2s; text-decoration: none;
-    }
+    .btn-ghost { display: inline-block; background: transparent; color: var(--dark-green); border: 1.5px solid var(--dark-green); border-radius: 100px; padding: 14px 32px; font-size: 14px; cursor: pointer; font-family: inherit; transition: background 0.2s; text-decoration: none; }
     .btn-ghost:hover { background: var(--off-white); }
-    .btn-lime {
-      display: inline-block; background: var(--lime); color: var(--dark-green);
-      border: none; border-radius: 100px; padding: 16px 36px;
-      font-size: 15px; font-weight: 500; cursor: pointer;
-      font-family: inherit; text-decoration: none;
-    }
+    .btn-lime { display: inline-block; background: var(--lime); color: var(--dark-green); border: none; border-radius: 100px; padding: 16px 36px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: inherit; text-decoration: none; }
 
-    /* TAGS */
     .tag { font-size: 11px; background: var(--off-white); color: var(--muted); border-radius: 100px; padding: 5px 12px; border: 1px solid var(--border); }
     .tag-lime { font-size: 11px; background: var(--lime); color: var(--dark-green); border-radius: 100px; padding: 5px 14px; font-weight: 500; }
     .tag-dark { font-size: 11px; background: rgba(223,252,161,0.15); color: var(--lime); border-radius: 100px; padding: 5px 14px; }
-
-    /* SECTION LABEL */
     .section-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); font-weight: 500; margin-bottom: 12px; }
+    .section-label-lime { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--lime); font-weight: 500; margin-bottom: 16px; opacity: 0.7; }
 
-    /* HERO */
     .hero { max-width: 1100px; margin: 0 auto; padding: 140px 48px 80px; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--lime); border-radius: 100px; padding: 6px 16px; margin-bottom: 40px;
-    }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--lime); border-radius: 100px; padding: 6px 16px; margin-bottom: 40px; }
     .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--dark-green); }
     .hero-badge span { font-size: 12px; color: var(--dark-green); font-weight: 500; }
-    .hero h1 {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(52px, 7vw, 88px);
-      font-weight: 400; line-height: 1.05;
-      letter-spacing: -0.025em; color: var(--dark-green);
-      margin-bottom: 32px; max-width: 760px;
-    }
+    .hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(52px, 7vw, 88px); font-weight: 400; line-height: 1.05; letter-spacing: -0.025em; color: var(--dark-green); margin-bottom: 32px; max-width: 760px; }
     .hero-desc { font-size: 18px; color: var(--muted); line-height: 1.75; max-width: 520px; margin-bottom: 48px; font-weight: 300; }
     .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-    .hero-stats {
-      display: flex; gap: 56px; margin-top: 80px;
-      padding-top: 48px; border-top: 1px solid var(--border); flex-wrap: wrap;
-    }
+    .hero-stats { display: flex; gap: 56px; margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--border); flex-wrap: wrap; }
     .stat-num { font-family: 'Instrument Serif', serif; font-size: 44px; color: var(--dark-green); font-weight: 400; line-height: 1; margin-bottom: 6px; }
     .stat-label { font-size: 13px; color: var(--muted); }
 
-    /* WORK SECTION */
     .work-section { background: var(--dark-green); padding: 100px 48px; }
     .work-inner { max-width: 1100px; margin: 0 auto; }
     .work-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; flex-wrap: wrap; gap: 16px; }
     .work-header h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); color: var(--white); font-weight: 400; }
-    .section-label-lime { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--lime); font-weight: 500; margin-bottom: 16px; opacity: 0.7; }
 
-    /* PROJECT CARD */
     .project-card { background: var(--white); border-radius: 28px; overflow: hidden; cursor: pointer; transition: transform 0.3s ease; }
     .project-card:hover { transform: translateY(-6px); }
-    ..project-card-image {
-  background: var(--lime); padding: 64px 40px 0;
-      display: flex; justify-content: center; align-items: flex-end;
-      gap: 20px; min-height: 380px; overflow: hidden;
-    }
-    .project-card- img { border-radius: 20px; box-shadow: 0 20px 60px rgba(9,64,32,0.2); object-fit: contain; }
-    .project-card-image img.center { z-index: 2; }
     .project-card-info { padding: 36px 44px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
-    .project-card-arrow {
-      width: 52px; height: 52px; border-radius: 50%;
-      background: var(--dark-green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-      font-size: 20px; color: var(--lime);
-    }
+    .project-card-arrow { width: 52px; height: 52px; border-radius: 50%; background: var(--dark-green); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px; color: var(--lime); }
     .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
 
-    /* PROCESS */
     .process-section { padding: 100px 48px; border-bottom: 1px solid var(--border); }
     .process-inner { max-width: 1100px; margin: 0 auto; }
     .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
@@ -152,7 +85,6 @@
     .process-title { font-size: 16px; font-weight: 500; color: var(--dark-green); margin-bottom: 10px; }
     .process-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
-    /* ABOUT */
     .about-section { padding: 100px 48px; }
     .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     .about-quote-card { background: var(--lime); border-radius: 24px; padding: 48px 44px; }
@@ -162,88 +94,69 @@
     .about-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 36px; }
     .about-link { font-size: 14px; color: var(--dark-green); border-bottom: 1px solid var(--dark-green); padding-bottom: 2px; }
 
-    /* CTA */
     .cta-section { background: var(--dark-green); padding: 100px 48px; text-align: center; }
     .cta-section h2 { font-family: 'Instrument Serif', serif; font-size: clamp(36px, 5vw, 56px); color: var(--lime); font-weight: 400; margin-bottom: 20px; }
     .cta-section p { font-size: 16px; color: #7AAA7A; margin: 0 auto 48px; max-width: 420px; line-height: 1.7; }
 
-    /* FOOTER */
     .footer { padding: 28px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
     .footer-left { font-size: 13px; color: var(--muted); }
     .footer-links { display: flex; gap: 28px; }
     .footer-link { font-size: 13px; color: var(--muted); }
 
-    /* CASE STUDY PAGE */
     .cs-hero { background: var(--dark-green); padding: 140px 48px 100px; }
     .cs-hero-inner { max-width: 860px; margin: 0 auto; }
     .cs-back { background: transparent; border: 1px solid rgba(223,252,161,0.3); color: var(--lime); border-radius: 100px; padding: 8px 18px; font-size: 13px; cursor: pointer; font-family: inherit; margin-bottom: 48px; opacity: 0.7; }
     .cs-hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(48px, 7vw, 80px); color: var(--lime); font-weight: 400; line-height: 1.05; margin-bottom: 24px; }
     .cs-hero-desc { font-size: 20px; color: #7AAA7A; line-height: 1.65; max-width: 600px; font-weight: 300; }
     .cs-tags { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
-
-    /* CS MOCKUP STRIP */
-    .cs-mockup-strip { background: var(--lime); padding: 64px 48px 0; overflow: hidden; display: flex; justify-content: center; gap: 20px; align-items: flex-end; }
-    .cs-mockup-strip img { border-radius: 20px; box-shadow: 0 20px 60px rgba(9,64,32,0.15); object-fit: contain; }
-
-    /* CS OVERVIEW */
     .cs-overview-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 64px; }
     .cs-overview-card { padding: 24px; background: var(--off-white); border-radius: 16px; border: 1px solid var(--border); }
     .cs-overview-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
     .cs-overview-value { font-size: 18px; font-weight: 500; color: var(--dark-green); }
-
-    /* CS CONTENT */
     .cs-content { max-width: 860px; margin: 0 auto; padding: 80px 48px; }
     .cs-section { margin-bottom: 72px; }
     .cs-section h2 { font-family: 'Instrument Serif', serif; font-size: 36px; color: var(--dark-green); font-weight: 400; margin-bottom: 24px; line-height: 1.2; }
     .cs-section p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
     .cs-section p:last-child { margin-bottom: 0; }
-
-    /* INSIGHTS */
     .insight-list { display: flex; flex-direction: column; gap: 14px; }
     .insight-item { display: flex; gap: 20px; align-items: flex-start; padding: 20px 24px; background: var(--off-white); border-radius: 14px; border: 1px solid var(--border); }
     .insight-num { font-family: 'Instrument Serif', serif; font-size: 20px; color: var(--dark-green); opacity: 0.3; flex-shrink: 0; margin-top: 2px; }
     .insight-text { font-size: 15px; color: var(--dark-green); line-height: 1.65; }
-
-    /* PROCESS STEPS */
     .process-steps { display: flex; flex-direction: column; gap: 28px; }
     .process-step { border-left: 3px solid var(--lime); padding-left: 24px; }
     .process-step-title { font-size: 15px; font-weight: 500; color: var(--dark-green); margin-bottom: 8px; }
     .process-step-body { font-size: 15px; color: var(--muted); line-height: 1.75; }
-
-    /* DARK STRIP */
     .dark-strip { background: var(--dark); padding: 64px 48px; }
     .dark-strip-inner { max-width: 1100px; margin: 0 auto; }
     .dark-strip-label { font-size: 13px; color: #5A8A5A; margin-bottom: 24px; }
-
-    /* OFF WHITE STRIP */
     .off-strip { background: var(--off-white); padding: 64px 48px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .off-strip-inner { max-width: 1100px; margin: 0 auto; }
     .off-strip-label { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
-
-    /* MOCKUP GRID */
     .mockup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
     .mockup-item img { width: 100%; border-radius: 16px; object-fit: contain; margin-bottom: 10px; }
     .mockup-label { font-size: 13px; color: var(--muted); text-align: center; }
     .mockup-single { width: 60%; margin: 0 auto; }
-
-    /* NEXT STEPS */
     .next-steps { padding: 36px 40px; background: var(--off-white); border-radius: 20px; border: 1px solid var(--border); margin-top: 56px; }
     .next-steps-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 16px; }
     .next-step-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px; }
     .next-step-item:last-child { margin-bottom: 0; }
     .next-step-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; margin-top: 7px; }
     .next-step-text { font-size: 15px; color: var(--muted); line-height: 1.65; }
-
-    /* CS CTA */
     .cs-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 56px; }
 
-    /* PAGE HIDDEN */
+    .lightbox { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.92); z-index: 9999; align-items: center; justify-content: center; cursor: zoom-out; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-height: 90vh; max-width: 90vw; border-radius: 12px; object-fit: contain; }
+    .lightbox-close { position: absolute; top: 24px; right: 32px; font-size: 40px; color: white; cursor: pointer; opacity: 0.7; line-height: 1; font-weight: 300; }
+    .lightbox-close:hover { opacity: 1; }
+    .zoomable { cursor: zoom-in; }
+
     .page { display: none; }
     .page.active { display: block; }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       .nav { padding: 0 24px; }
+      .nav-links { gap: 16px; }
       .hero { padding: 100px 24px 60px; }
       .hero-stats { gap: 32px; }
       .work-section, .process-section, .about-section, .cta-section { padding: 60px 24px; }
@@ -252,17 +165,21 @@
       .mockup-grid { grid-template-columns: 1fr; }
       .cs-content { padding: 60px 24px; }
       .cs-hero { padding: 100px 24px 60px; }
-      .cs-mockup-strip { gap: 12px; padding: 40px 24px 0; }
       .footer { padding: 24px; }
-      .nav-links { gap: 20px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">×</span>
+    <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+  </div>
+
   <!-- NAV -->
   <nav class="nav" id="nav">
-    <a href="#" class="nav-logo" onclick="showPage('home')">
+    <a href="#" class="nav-logo" onclick="showPage('home'); return false;">
       <div class="nav-logo-circle"><span>SV</span></div>
       <span class="nav-logo-text">Siddhartha Verma</span>
     </a>
@@ -270,6 +187,7 @@
       <span class="nav-link" onclick="scrollToSection('work')">Work</span>
       <span class="nav-link" onclick="scrollToSection('about')">About</span>
       <a href="mailto:worksid21@gmail.com" class="nav-link">Contact</a>
+      <a href="https://x.com/sidverma211" target="_blank" class="nav-link-accent">X ↗</a>
       <a href="https://www.linkedin.com/in/siddharthaverma21/" target="_blank" class="nav-link-accent">LinkedIn ↗</a>
     </div>
   </nav>
@@ -277,13 +195,9 @@
   <!-- HOME PAGE -->
   <div id="page-home" class="page active">
 
-    <!-- HERO -->
     <section class="hero">
       <div class="fade-in" data-delay="1">
-        <div class="hero-badge">
-          <div class="hero-badge-dot"></div>
-          <span>Open to product design internships</span>
-        </div>
+        <div class="hero-badge"><div class="hero-badge-dot"></div><span>Open to product design internships</span></div>
       </div>
       <div class="fade-in" data-delay="2">
         <h1>Designing for people<br />who don't have time<br />to <em>waste.</em></h1>
@@ -299,42 +213,27 @@
       </div>
       <div class="fade-in" data-delay="5">
         <div class="hero-stats">
-          <div>
-            <div class="stat-num">30</div>
-            <div class="stat-label">Day project sprint</div>
-          </div>
-          <div>
-            <div class="stat-num">5</div>
-            <div class="stat-label">Hi-fi screens designed</div>
-          </div>
-          <div>
-            <div class="stat-num">2</div>
-            <div class="stat-label">Real user interviews</div>
-          </div>
-          <div>
-            <div class="stat-num">1</div>
-            <div class="stat-label">Focused case study</div>
-          </div>
+          <div><div class="stat-num">30</div><div class="stat-label">Day project sprint</div></div>
+          <div><div class="stat-num">5</div><div class="stat-label">Hi-fi screens designed</div></div>
+          <div><div class="stat-num">2</div><div class="stat-label">Real user interviews</div></div>
+          <div><div class="stat-num">1</div><div class="stat-label">Focused case study</div></div>
         </div>
       </div>
     </section>
 
-    <!-- WORK -->
     <section class="work-section" id="work">
       <div class="work-inner">
         <div class="fade-in">
           <p class="section-label-lime">Featured work</p>
-          <div class="work-header">
-            <h2>One project, done properly.</h2>
-          </div>
+          <div class="work-header"><h2>One project, done properly.</h2></div>
         </div>
         <div class="fade-in" data-delay="1">
           <div class="project-card" onclick="showPage('case-study')">
             <div style="background:#DFFCA1; padding:64px 40px 0; display:flex; justify-content:center; align-items:flex-end; gap:20px; min-height:380px; overflow:hidden;">
-  <img src="Images/home-mockup.png.webp" alt="Home Screen" style="height:320px; border-radius:20px; box-shadow:0 20px 60px rgba(9,64,32,0.2); object-fit:contain; transform:rotate(-4deg) translateY(8px);" />
-  <img src="Images/queue-view-mockup.png.webp" alt="Queue View" style="height:360px; border-radius:20px; box-shadow:0 24px 80px rgba(9,64,32,0.25); object-fit:contain; z-index:2;" />
-  <img src="Images/confirmation-mockup.png.webp" alt="Confirmation" style="height:320px; border-radius:20px; box-shadow:0 20px 60px rgba(9,64,32,0.2); object-fit:contain; transform:rotate(4deg) translateY(8px);" />
-</div>
+              <img src="Images/home-mockup.png.webp" alt="Home Screen" class="zoomable" onclick="event.stopPropagation(); openLightbox(this.src)" style="height:320px; border-radius:20px; box-shadow:0 20px 60px rgba(9,64,32,0.2); object-fit:contain; transform:rotate(-4deg) translateY(8px);" />
+              <img src="Images/queue-view-mockup.png.webp" alt="Queue View" class="zoomable" onclick="event.stopPropagation(); openLightbox(this.src)" style="height:360px; border-radius:20px; box-shadow:0 24px 80px rgba(9,64,32,0.25); object-fit:contain; z-index:2;" />
+              <img src="Images/confirmation-mockup.png.webp" alt="Confirmation" class="zoomable" onclick="event.stopPropagation(); openLightbox(this.src)" style="height:320px; border-radius:20px; box-shadow:0 20px 60px rgba(9,64,32,0.2); object-fit:contain; transform:rotate(4deg) translateY(8px);" />
+            </div>
             <div class="project-card-info">
               <div style="flex:1;">
                 <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
@@ -358,7 +257,6 @@
       </div>
     </section>
 
-    <!-- PROCESS -->
     <section class="process-section">
       <div class="process-inner">
         <div class="fade-in">
@@ -366,31 +264,14 @@
           <h2 style="font-family:'Instrument Serif',serif; font-size:clamp(32px,4vw,44px); color:var(--dark-green); font-weight:400; margin-bottom:56px; max-width:480px;">Research first. Design second. Always.</h2>
         </div>
         <div class="process-grid">
-          <div class="process-card fade-in" data-delay="1">
-            <div class="process-num">01</div>
-            <div class="process-title">Understand</div>
-            <div class="process-desc">User interviews, competitive research, synthesis — understand the real problem before touching Figma.</div>
-          </div>
-          <div class="process-card fade-in" data-delay="2">
-            <div class="process-num">02</div>
-            <div class="process-title">Define</div>
-            <div class="process-desc">Persona, problem statement, user journey map — define exactly who you're designing for and why.</div>
-          </div>
-          <div class="process-card fade-in" data-delay="3">
-            <div class="process-num">03</div>
-            <div class="process-title">Structure</div>
-            <div class="process-desc">Paper sketches, wireframes, clickable prototype — solve structure before adding colour.</div>
-          </div>
-          <div class="process-card fade-in" data-delay="4">
-            <div class="process-num">04</div>
-            <div class="process-title">Design</div>
-            <div class="process-desc">Design system, hi-fi screens, polish — build consistently from a single source of truth.</div>
-          </div>
+          <div class="process-card fade-in" data-delay="1"><div class="process-num">01</div><div class="process-title">Understand</div><div class="process-desc">User interviews, competitive research, synthesis — understand the real problem before touching Figma.</div></div>
+          <div class="process-card fade-in" data-delay="2"><div class="process-num">02</div><div class="process-title">Define</div><div class="process-desc">Persona, problem statement, user journey map — define exactly who you're designing for and why.</div></div>
+          <div class="process-card fade-in" data-delay="3"><div class="process-num">03</div><div class="process-title">Structure</div><div class="process-desc">Paper sketches, wireframes, clickable prototype — solve structure before adding colour.</div></div>
+          <div class="process-card fade-in" data-delay="4"><div class="process-num">04</div><div class="process-title">Design</div><div class="process-desc">Design system, hi-fi screens, polish — build consistently from a single source of truth.</div></div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section class="about-section" id="about">
       <div class="about-inner">
         <div class="fade-in">
@@ -414,7 +295,6 @@
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta-section">
       <div class="fade-in">
         <p class="section-label-lime">Let's connect</p>
@@ -424,7 +304,6 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
       <span class="footer-left">Siddhartha Verma · Product Designer · 2025</span>
       <div class="footer-links">
@@ -439,7 +318,6 @@
   <!-- CASE STUDY PAGE -->
   <div id="page-case-study" class="page">
 
-    <!-- CS HERO -->
     <section class="cs-hero">
       <div class="cs-hero-inner">
         <div class="fade-in">
@@ -455,35 +333,22 @@
       </div>
     </section>
 
-    <!-- CS MOCKUP STRIP -->
-    <div class="cs-mockup-strip">
-      <img src="Images/home-mockup.png.webp" alt="Home" style="height:300px; transform:rotate(-5deg) translateY(10px);" />
-      <img src="Images/shop-detail-mockup.png.webp" alt="Shop Detail" style="height:270px; transform:rotate(-2deg) translateY(4px);" />
-      <img src="Images/queue-view-mockup.png.webp" alt="Queue View" style="height:340px;" />
-      <img src="Images/confirmation-mockup.png.webp" alt="Confirmation" style="height:270px; transform:rotate(2deg) translateY(4px);" />
-      <img src="Images/dashboard-mockup.png.webp" alt="Dashboard" style="height:300px; transform:rotate(5deg) translateY(10px);" />
+    <div style="background:#DFFCA1; padding:64px 48px 0; overflow:hidden; display:flex; justify-content:center; gap:20px; align-items:flex-end;">
+      <img src="Images/home-mockup.png.webp" alt="Home" class="zoomable" onclick="openLightbox(this.src)" style="height:300px; border-radius:20px; box-shadow:0 20px 60px rgba(9,64,32,0.15); object-fit:contain; transform:rotate(-5deg) translateY(10px);" />
+      <img src="Images/shop-detail-mockup.png.webp" alt="Shop Detail" class="zoomable" onclick="openLightbox(this.src)" style="height:270px; border-radius:20px; box-shadow:0 20px 60px rgba(9,64,32,0.15); object-fit:contain; transform:rotate(-2deg) translateY(4px);" />
+      <img src="Images/queue-view-mockup.png.webp" alt="Queue View" class="zoomable" onclick="openLightbox(this.src)" style="height:340px; border-radius:20px; box-shadow:0 20px 60px rgba(9,64,32,0.15); object-fit:contain;" />
+      <img src="Images/confirmation-mockup.png.webp" alt="Confirmation" class="zoomable" onclick="openLightbox(this.src)" style="height:270px; border-radius:20px; box-shadow:0 20px 60px rgba(9,64,32,0.15); object-fit:contain; transform:rotate(2deg) translateY(4px);" />
+      <img src="Images/dashboard-mockup.png.webp" alt="Dashboard" class="zoomable" onclick="openLightbox(this.src)" style="height:300px; border-radius:20px; box-shadow:0 20px 60px rgba(9,64,32,0.15); object-fit:contain; transform:rotate(5deg) translateY(10px);" />
     </div>
 
-    <!-- CS CONTENT -->
     <div class="cs-content">
 
-      <!-- Overview -->
       <div class="cs-overview-grid fade-in">
-        <div class="cs-overview-card">
-          <div class="cs-overview-label">Timeline</div>
-          <div class="cs-overview-value">30 days</div>
-        </div>
-        <div class="cs-overview-card">
-          <div class="cs-overview-label">Role</div>
-          <div class="cs-overview-value">Solo designer</div>
-        </div>
-        <div class="cs-overview-card">
-          <div class="cs-overview-label">Tools</div>
-          <div class="cs-overview-value">Figma, Pen + Paper</div>
-        </div>
+        <div class="cs-overview-card"><div class="cs-overview-label">Timeline</div><div class="cs-overview-value">30 days</div></div>
+        <div class="cs-overview-card"><div class="cs-overview-label">Role</div><div class="cs-overview-value">Solo designer</div></div>
+        <div class="cs-overview-card"><div class="cs-overview-label">Tools</div><div class="cs-overview-value">Figma, Pen + Paper</div></div>
       </div>
 
-      <!-- Section 1 -->
       <div class="cs-section fade-in">
         <p class="section-label">01 — The Problem</p>
         <h2>The wait that costs you before you even arrive.</h2>
@@ -491,12 +356,10 @@
         <p>The problem this solves is simple: right now, finding out the wait time costs you the same time as the wait itself. This matters because in cities with limited good barbers, customers can't just switch shops — they wait, blindly, with no information.</p>
       </div>
 
-      <!-- Problem statement image -->
       <div class="fade-in" style="margin-bottom:72px;">
-        <img src="Images/problem-statement.png.png" alt="Problem Statement" style="width:100%; border-radius:20px;" />
+        <img src="Images/problem-statement.png.png" alt="Problem Statement" class="zoomable" onclick="openLightbox(this.src)" style="width:100%; border-radius:20px;" />
       </div>
 
-      <!-- Section 2 -->
       <div class="cs-section fade-in">
         <p class="section-label">02 — My Research</p>
         <h2>Ask about behaviour, not features.</h2>
@@ -504,80 +367,46 @@
         <p>I also analyzed 2 competitor apps — Booksy and Unqueue — to understand the existing landscape. The key gap I found: no app combines live queue visibility with real-time wait estimation for walk-in customers.</p>
       </div>
 
-      <!-- Section 3 -->
       <div class="cs-section fade-in">
         <p class="section-label">03 — Key Insights</p>
         <h2>What the research revealed.</h2>
         <div class="insight-list">
-          <div class="insight-item">
-            <span class="insight-num">01</span>
-            <span class="insight-text">People don't know the wait time without physically going there — the problem starts before they even leave home.</span>
-          </div>
-          <div class="insight-item">
-            <span class="insight-num">02</span>
-            <span class="insight-text">Uncertainty is more painful than the actual wait — the app needs to make people feel informed and in control.</span>
-          </div>
-          <div class="insight-item">
-            <span class="insight-num">03</span>
-            <span class="insight-text">People have built workarounds like going at off-peak times — the problem is real and consistent but no good solution exists.</span>
-          </div>
-          <div class="insight-item">
-            <span class="insight-num">04</span>
-            <span class="insight-text">This problem is specific to Tier 2 cities where good barbers are limited — the solution needs to work for loyal, repeat customers.</span>
-          </div>
-          <div class="insight-item">
-            <span class="insight-num">05</span>
-            <span class="insight-text">The real pain isn't the wait — it's not knowing when the wait will end.</span>
-          </div>
+          <div class="insight-item"><span class="insight-num">01</span><span class="insight-text">People don't know the wait time without physically going there — the problem starts before they even leave home.</span></div>
+          <div class="insight-item"><span class="insight-num">02</span><span class="insight-text">Uncertainty is more painful than the actual wait — the app needs to make people feel informed and in control.</span></div>
+          <div class="insight-item"><span class="insight-num">03</span><span class="insight-text">People have built workarounds like going at off-peak times — the problem is real and consistent but no good solution exists.</span></div>
+          <div class="insight-item"><span class="insight-num">04</span><span class="insight-text">This problem is specific to Tier 2 cities where good barbers are limited — the solution needs to work for loyal, repeat customers.</span></div>
+          <div class="insight-item"><span class="insight-num">05</span><span class="insight-text">The real pain isn't the wait — it's not knowing when the wait will end.</span></div>
         </div>
       </div>
 
-      <!-- Section 4 -->
       <div class="cs-section fade-in">
         <p class="section-label">04 — My Design Process</p>
         <h2>From problem to product.</h2>
         <div class="process-steps">
-          <div class="process-step">
-            <div class="process-step-title">Define</div>
-            <div class="process-step-body">I created a user persona — Ansh, a 20-year-old student in Lucknow — based on insights from my user interviews. His behaviors, frustrations, and goals shaped every design decision that followed. From there I wrote a clear problem statement: Ansh needs a way to know the wait time at his barber shop before leaving home because right now he has to physically go there just to find out.</div>
-          </div>
-          <div class="process-step">
-            <div class="process-step-title">Ideate</div>
-            <div class="process-step-body">I started with rapid paper sketches to explore layout ideas without the pressure of perfection. After settling on a structure I moved to grayscale wireframes in Figma — keeping color and typography out until the layout was solved.</div>
-          </div>
-          <div class="process-step">
-            <div class="process-step-title">Prototype</div>
-            <div class="process-step-body">I connected all screens into a clickable prototype and tested it with a real user. Watching someone use it silently revealed a critical gap — there was no screen between the shop list and the queue. I added a Shop Detail screen to give users the information they needed before committing to join.</div>
-          </div>
-          <div class="process-step">
-            <div class="process-step-title">Design</div>
-            <div class="process-step-body">Before touching hi-fi screens I built a design system — color styles, text styles, and reusable components. This kept all 5 screens visually consistent and saved significant time during hi-fi design.</div>
-          </div>
-          <div class="process-step">
-            <div class="process-step-title">Iterate</div>
-            <div class="process-step-body">After external feedback I updated the border radius across all components and refined spacing. I also added a queue progress bar to the Queue View screen based on a user comment that the wait time should feel live — like a delivery tracker.</div>
-          </div>
+          <div class="process-step"><div class="process-step-title">Define</div><div class="process-step-body">I created a user persona — Ansh, a 20-year-old student in Lucknow — based on insights from my user interviews. His behaviors, frustrations, and goals shaped every design decision that followed. From there I wrote a clear problem statement: Ansh needs a way to know the wait time at his barber shop before leaving home because right now he has to physically go there just to find out.</div></div>
+          <div class="process-step"><div class="process-step-title">Ideate</div><div class="process-step-body">I started with rapid paper sketches to explore layout ideas without the pressure of perfection. After settling on a structure I moved to grayscale wireframes in Figma — keeping color and typography out until the layout was solved.</div></div>
+          <div class="process-step"><div class="process-step-title">Prototype</div><div class="process-step-body">I connected all screens into a clickable prototype and tested it with a real user. Watching someone use it silently revealed a critical gap — there was no screen between the shop list and the queue. I added a Shop Detail screen to give users the information they needed before committing to join.</div></div>
+          <div class="process-step"><div class="process-step-title">Design</div><div class="process-step-body">Before touching hi-fi screens I built a design system — color styles, text styles, and reusable components. This kept all 5 screens visually consistent and saved significant time during hi-fi design.</div></div>
+          <div class="process-step"><div class="process-step-title">Iterate</div><div class="process-step-body">After external feedback I updated the border radius across all components and refined spacing. I also added a queue progress bar to the Queue View screen based on a user comment that the wait time should feel live — like a delivery tracker.</div></div>
         </div>
       </div>
+
     </div>
 
-    <!-- Wireframes -->
     <div class="off-strip">
       <div class="off-strip-inner fade-in">
         <p class="off-strip-label">Wireframes → Hi-Fi progression</p>
-        <img src="Images/wireframes.png.webp" alt="Wireframe to Hi-Fi" style="width:100%; border-radius:20px;" />
+        <img src="Images/wireframes.png.webp" alt="Wireframe to Hi-Fi" class="zoomable" onclick="openLightbox(this.src)" style="width:100%; border-radius:20px;" />
       </div>
     </div>
 
-    <!-- Annotated -->
     <div class="dark-strip">
       <div class="dark-strip-inner fade-in">
         <p class="dark-strip-label">Annotated design decisions</p>
-        <img src="Images/annontated-screens.png.png" alt="Annotated Screens" style="width:100%; border-radius:20px;" />
+        <img src="Images/annontated-screens.png.png" alt="Annotated Screens" class="zoomable" onclick="openLightbox(this.src)" style="width:100%; border-radius:20px;" />
       </div>
     </div>
 
-    <!-- Final solution -->
     <div class="cs-content">
       <div class="cs-section fade-in">
         <p class="section-label">05 — Final Solution</p>
@@ -586,61 +415,33 @@
         <p>Unlike Booksy which only serves planned appointments, and Unqueue which shows walk-in options but goes silent after booking — BarberQ keeps Ansh informed from the moment he checks his phone to the moment he walks in.</p>
       </div>
 
-      <!-- Mockup grid -->
       <div class="fade-in">
         <div class="mockup-grid">
-          <div class="mockup-item">
-            <img src="Images/home-mockup.png.webp" onclick="openLightbox(this.src)" style="cursor:zoom-in; height:320px; alt="Home Screen" />
-            <div class="mockup-label">Home Screen</div>
-          </div>
-          <div class="mockup-item">
-            <img src="Images/shop-detail-mockup.png.webp" alt="Shop Detail" />
-            <div class="mockup-label">Shop Detail</div>
-          </div>
-          <div class="mockup-item">
-            <img src="Images/queue-view-mockup.png.webp" alt="Queue View" />
-            <div class="mockup-label">Queue View</div>
-          </div>
-          <div class="mockup-item">
-            <img src="Images/confirmation-mockup.png.webp" alt="Confirmation" />
-            <div class="mockup-label">Queue Confirmation</div>
-          </div>
+          <div class="mockup-item"><img src="Images/home-mockup.png.webp" alt="Home Screen" class="zoomable" onclick="openLightbox(this.src)" /><div class="mockup-label">Home Screen</div></div>
+          <div class="mockup-item"><img src="Images/shop-detail-mockup.png.webp" alt="Shop Detail" class="zoomable" onclick="openLightbox(this.src)" /><div class="mockup-label">Shop Detail</div></div>
+          <div class="mockup-item"><img src="Images/queue-view-mockup.png.webp" alt="Queue View" class="zoomable" onclick="openLightbox(this.src)" /><div class="mockup-label">Queue View</div></div>
+          <div class="mockup-item"><img src="Images/confirmation-mockup.png.webp" alt="Confirmation" class="zoomable" onclick="openLightbox(this.src)" /><div class="mockup-label">Queue Confirmation</div></div>
         </div>
         <div class="mockup-single mockup-item">
-          <img src="Images/dashboard-mockup.png.webp" alt="Barber Dashboard" />
+          <img src="Images/dashboard-mockup.png.webp" alt="Barber Dashboard" class="zoomable" onclick="openLightbox(this.src)" />
           <div class="mockup-label">Barber Dashboard</div>
         </div>
       </div>
 
-      <!-- What's next -->
       <div class="next-steps fade-in">
         <div class="next-steps-label">What I'd do next</div>
-        <div class="next-step-item">
-          <div class="next-step-dot"></div>
-          <div class="next-step-text">Design the barber onboarding flow — how a shop owner sets up and manages their profile</div>
-        </div>
-        <div class="next-step-item">
-          <div class="next-step-dot"></div>
-          <div class="next-step-text">Explore a live notification screen that updates Ansh's position in real time</div>
-        </div>
-        <div class="next-step-item">
-          <div class="next-step-dot"></div>
-          <div class="next-step-text">Test with more users in Tier 2 cities to validate the design assumptions</div>
-        </div>
-        <div class="next-step-item">
-          <div class="next-step-dot"></div>
-          <div class="next-step-text">AI-powered virtual try-on — allowing customers to preview haircut styles while waiting in the queue</div>
-        </div>
+        <div class="next-step-item"><div class="next-step-dot"></div><div class="next-step-text">Design the barber onboarding flow — how a shop owner sets up and manages their profile</div></div>
+        <div class="next-step-item"><div class="next-step-dot"></div><div class="next-step-text">Explore a live notification screen that updates Ansh's position in real time</div></div>
+        <div class="next-step-item"><div class="next-step-dot"></div><div class="next-step-text">Test with more users in Tier 2 cities to validate the design assumptions</div></div>
+        <div class="next-step-item"><div class="next-step-dot"></div><div class="next-step-text">AI-powered virtual try-on — allowing customers to preview haircut styles while waiting in the queue</div></div>
       </div>
 
-      <!-- CS CTA -->
       <div class="cs-cta fade-in">
         <a href="https://www.figma.com/proto/lgn0CQT75Tc8jVH0PzhwMT/Baber-Wait-Time-Project?node-id=135-75&p=f&viewport=-2633%2C-249%2C0.62&t=Wipe0sAzcggBAcUK-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=116%3A2&page-id=0%3A1" target="_blank" class="btn-primary">View Live Prototype ↗</a>
         <a href="mailto:worksid21@gmail.com" class="btn-ghost">Get in touch</a>
       </div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
       <span class="footer-left">Siddhartha Verma · Product Designer · 2025</span>
       <button onclick="showPage('home')" style="background:transparent; border:none; font-size:13px; color:var(--muted); cursor:pointer; font-family:inherit;">← Back to portfolio</button>
@@ -649,64 +450,39 @@
   </div>
 
   <script>
-    // Page switching
     function showPage(page) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.getElementById('page-' + page).classList.add('active');
       window.scrollTo(0, 0);
       initFadeIns();
     }
-
-    // Scroll to section
     function scrollToSection(id) {
       showPage('home');
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      setTimeout(() => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 100);
     }
-
-    // Nav scroll effect
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('nav');
       if (window.scrollY > 40) nav.classList.add('scrolled');
       else nav.classList.remove('scrolled');
     });
-
-    // Fade in on scroll
     function initFadeIns() {
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
       }, { threshold: 0.1 });
-
       document.querySelectorAll('.fade-in:not(.visible)').forEach(el => observer.observe(el));
     }
-
-    // Init
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
     initFadeIns();
   </script>
-<!-- LIGHTBOX -->
-<div id="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.9); z-index:9999; align-items:center; justify-content:center; cursor:zoom-out;">
-  <img id="lightbox-img" src="" style="max-height:90vh; max-width:90vw; border-radius:12px; object-fit:contain;" />
-</div>
 
-<script>
-  function openLightbox(src) {
-    const lb = document.getElementById('lightbox');
-    document.getElementById('lightbox-img').src = src;
-    lb.style.display = 'flex';
-  }
-  function closeLightbox() {
-    document.getElementById('lightbox').style.display = 'none';
-  }
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
-  });
-</script>
 </body>
 </html>
