@@ -363,7 +363,556 @@
       </div>
     </section>
 
+    <footer class="ft"><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siddhartha Verma — Product Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --dg: #094020; --lime: #DFFCA1; --w: #FAFFF5; --ow: #F2F9E8; --m: #4A6A4A; --b: #D0EAB0; --dk: #0A1A0A; --t: #3DAB8E; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--w); color: var(--dk); line-height: 1; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; height: 62px; transition: all 0.3s; }
+    .nav.scrolled { background: rgba(250,255,245,0.96); border-bottom: 1px solid var(--b); backdrop-filter: blur(16px); }
+    .nav-logo { display: flex; align-items: center; gap: 8px; cursor: pointer; text-decoration: none; }
+    .nav-circle { width: 28px; height: 28px; border-radius: 50%; background: var(--dg); display: flex; align-items: center; justify-content: center; }
+    .nav-circle span { font-size: 9px; font-weight: 600; color: var(--lime); }
+    .nav-name { font-size: 14px; font-weight: 500; color: var(--dg); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nl { font-size: 13px; color: var(--m); cursor: pointer; transition: color 0.2s; }
+    .nl:hover { color: var(--dg); }
+    .nla { font-size: 13px; color: var(--dg); border-bottom: 1px solid var(--dg); padding-bottom: 1px; }
+
+    .hbg { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hbg span { display: block; width: 22px; height: 2px; background: var(--dg); border-radius: 2px; transition: all 0.3s; }
+    .hbg.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hbg.open span:nth-child(2) { opacity: 0; }
+    .hbg.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .drawer { display: none; position: fixed; top: 62px; left: 0; right: 0; background: rgba(250,255,245,0.98); border-bottom: 1px solid var(--b); backdrop-filter: blur(16px); z-index: 999; flex-direction: column; }
+    .drawer.open { display: flex; }
+    .di { font-size: 16px; color: var(--m); cursor: pointer; padding: 16px 24px; border-bottom: 1px solid var(--b); transition: color 0.2s; display: block; }
+    .di:last-child { border-bottom: none; }
+    .di:hover { color: var(--dg); }
+    .dia { font-size: 16px; color: var(--dg); font-weight: 500; padding: 16px 24px; border-bottom: 1px solid var(--b); cursor: pointer; display: block; }
+
+    .fi { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fi.v { opacity: 1; transform: translateY(0); }
+    .fi[data-d="1"] { transition-delay: 0.1s; } .fi[data-d="2"] { transition-delay: 0.2s; } .fi[data-d="3"] { transition-delay: 0.3s; } .fi[data-d="4"] { transition-delay: 0.4s; } .fi[data-d="5"] { transition-delay: 0.5s; }
+
+    .bp { display: inline-block; background: var(--dg); color: var(--lime); border: none; border-radius: 100px; padding: 14px 28px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit; transition: opacity 0.2s; text-decoration: none; }
+    .bp:hover { opacity: 0.85; }
+    .bg { display: inline-block; background: transparent; color: var(--dg); border: 1.5px solid var(--dg); border-radius: 100px; padding: 13px 28px; font-size: 14px; cursor: pointer; font-family: inherit; transition: background 0.2s; text-decoration: none; }
+    .bg:hover { background: var(--ow); }
+    .bl { display: inline-block; background: var(--lime); color: var(--dg); border: none; border-radius: 100px; padding: 15px 32px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: inherit; text-decoration: none; }
+    .tag { font-size: 11px; background: var(--ow); color: var(--m); border-radius: 100px; padding: 5px 12px; border: 1px solid var(--b); }
+    .tl { font-size: 11px; background: var(--lime); color: var(--dg); border-radius: 100px; padding: 5px 14px; font-weight: 500; }
+    .td { font-size: 11px; background: rgba(223,252,161,0.15); color: var(--lime); border-radius: 100px; padding: 5px 14px; }
+    .sl { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--t); font-weight: 500; margin-bottom: 12px; }
+    .sll { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--lime); font-weight: 500; margin-bottom: 16px; opacity: 0.7; }
+
+    .hero { max-width: 1100px; margin: 0 auto; padding: 120px 48px 80px; }
+    .hbadge { display: inline-flex; align-items: center; gap: 8px; background: var(--lime); border-radius: 100px; padding: 6px 16px; margin-bottom: 36px; }
+    .hbadge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--dg); }
+    .hbadge span { font-size: 12px; color: var(--dg); font-weight: 500; }
+    .hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(40px, 7vw, 88px); font-weight: 400; line-height: 1.05; letter-spacing: -0.025em; color: var(--dg); margin-bottom: 28px; max-width: 760px; }
+    .hdesc { font-size: clamp(15px, 2vw, 18px); color: var(--m); line-height: 1.75; max-width: 520px; margin-bottom: 40px; font-weight: 300; }
+    .hbtns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hstats { display: flex; gap: 40px; margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--b); flex-wrap: wrap; }
+    .snum { font-family: 'Instrument Serif', serif; font-size: 40px; color: var(--dg); font-weight: 400; line-height: 1; margin-bottom: 6px; }
+    .slbl { font-size: 13px; color: var(--m); }
+
+    .ws { background: var(--dg); padding: 80px 48px; }
+    .wi { max-width: 1100px; margin: 0 auto; }
+    .wh { margin-bottom: 40px; }
+    .wh h2 { font-family: 'Instrument Serif', serif; font-size: clamp(28px, 4vw, 48px); color: var(--w); font-weight: 400; margin-top: 8px; }
+
+    .card { background: var(--w); border-radius: 24px; overflow: hidden; cursor: pointer; transition: transform 0.3s; }
+    .card:hover { transform: translateY(-4px); }
+    .cstrip { background: #DFFCA1; padding: 48px 32px 0; display: flex; justify-content: center; align-items: flex-end; gap: 16px; min-height: 320px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .cstrip::-webkit-scrollbar { display: none; }
+    .cstrip img { border-radius: 16px; box-shadow: 0 16px 48px rgba(9,64,32,0.2); object-fit: contain; flex-shrink: 0; }
+    .cinfo { padding: 28px 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .carr { width: 48px; height: 48px; border-radius: 50%; background: var(--dg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; color: var(--lime); }
+    .ctags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
+
+    .ps { padding: 80px 48px; border-bottom: 1px solid var(--b); }
+    .pi { max-width: 1100px; margin: 0 auto; }
+    .pg { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .pc { padding: 24px; background: var(--ow); border-radius: 16px; border: 1px solid var(--b); }
+    .pn { font-family: 'Instrument Serif', serif; font-size: 36px; color: var(--dg); opacity: 0.18; margin-bottom: 14px; font-weight: 400; }
+    .pt { font-size: 15px; font-weight: 500; color: var(--dg); margin-bottom: 8px; }
+    .pd { font-size: 13px; color: var(--m); line-height: 1.65; }
+
+    .as { padding: 80px 48px; }
+    .ai { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .aqc { background: var(--lime); border-radius: 20px; padding: 40px 36px; }
+    .aq { font-family: 'Instrument Serif', serif; font-size: clamp(18px, 2.5vw, 26px); color: var(--dg); font-style: italic; line-height: 1.5; margin-bottom: 20px; }
+    .aqdiv { height: 1px; background: rgba(9,64,32,0.15); margin-bottom: 16px; }
+    .aqa { font-size: 13px; color: var(--dg); opacity: 0.65; line-height: 1.6; }
+    .alinks { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 32px; }
+    .alink { font-size: 14px; color: var(--dg); border-bottom: 1px solid var(--dg); padding-bottom: 2px; }
+
+    .ctas { background: var(--dg); padding: 80px 48px; text-align: center; }
+    .ctas h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 5vw, 56px); color: var(--lime); font-weight: 400; margin-bottom: 16px; }
+    .ctas p { font-size: 16px; color: #7AAA7A; margin: 0 auto 40px; max-width: 420px; line-height: 1.7; }
+
+    .ft { padding: 24px 48px; border-top: 1px solid var(--b); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .ftl { font-size: 13px; color: var(--m); }
+    .ftlinks { display: flex; gap: 24px; flex-wrap: wrap; }
+    .ftlink { font-size: 13px; color: var(--m); }
+
+    .csh { background: var(--dg); padding: 120px 48px 80px; }
+    .cshi { max-width: 860px; margin: 0 auto; }
+    .csback { background: transparent; border: 1px solid rgba(223,252,161,0.3); color: var(--lime); border-radius: 100px; padding: 8px 16px; font-size: 13px; cursor: pointer; font-family: inherit; margin-bottom: 40px; opacity: 0.7; display: inline-block; }
+    .csh h1 { font-family: 'Instrument Serif', serif; font-size: clamp(40px, 7vw, 80px); color: var(--lime); font-weight: 400; line-height: 1.05; margin-bottom: 20px; }
+    .cshdesc { font-size: clamp(15px, 2vw, 20px); color: #7AAA7A; line-height: 1.65; max-width: 600px; font-weight: 300; }
+    .cstags { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+
+    .msstrip { background: #DFFCA1; padding: 48px 32px 0; display: flex; justify-content: center; align-items: flex-end; gap: 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .msstrip::-webkit-scrollbar { display: none; }
+    .msstrip img { border-radius: 16px; box-shadow: 0 16px 48px rgba(9,64,32,0.15); object-fit: contain; flex-shrink: 0; }
+
+    /* MAIN CONTENT WRAPPER — all case study content goes here */
+    .cc { max-width: 860px; margin: 0 auto; padding: 64px 48px; }
+
+    .ovg { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 56px; }
+    .ovc { padding: 20px; background: var(--ow); border-radius: 14px; border: 1px solid var(--b); }
+    .ovl { font-size: 11px; color: var(--m); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+    .ovv { font-size: 16px; font-weight: 500; color: var(--dg); }
+
+    .csc { margin-bottom: 64px; }
+    .csc h2 { font-family: 'Instrument Serif', serif; font-size: clamp(28px, 4vw, 36px); color: var(--dg); font-weight: 400; margin-bottom: 20px; line-height: 1.2; }
+    .csc p { font-size: 15px; color: var(--m); line-height: 1.8; margin-bottom: 14px; }
+    .csc p:last-child { margin-bottom: 0; }
+
+    .ilist { display: flex; flex-direction: column; gap: 12px; }
+    .iitem { display: flex; gap: 16px; align-items: flex-start; padding: 18px 20px; background: var(--ow); border-radius: 12px; border: 1px solid var(--b); }
+    .inum { font-family: 'Instrument Serif', serif; font-size: 18px; color: var(--dg); opacity: 0.3; flex-shrink: 0; margin-top: 2px; }
+    .itxt { font-size: 14px; color: var(--dg); line-height: 1.65; }
+
+    .psteps { display: flex; flex-direction: column; gap: 24px; }
+    .pstep { border-left: 3px solid var(--lime); padding-left: 20px; }
+    .pst { font-size: 15px; font-weight: 500; color: var(--dg); margin-bottom: 6px; }
+    .psb { font-size: 14px; color: var(--m); line-height: 1.75; }
+
+    .dstrip { background: var(--dk); padding: 48px 32px; }
+    .dsi { max-width: 1100px; margin: 0 auto; }
+    .dsl { font-size: 13px; color: #5A8A5A; margin-bottom: 20px; }
+    .ostrip { background: var(--ow); padding: 48px 32px; border-top: 1px solid var(--b); border-bottom: 1px solid var(--b); }
+    .osi { max-width: 1100px; margin: 0 auto; }
+    .osl { font-size: 13px; color: var(--m); margin-bottom: 20px; }
+
+    .siw { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; border-radius: 16px; }
+    .siw::-webkit-scrollbar { display: none; }
+    .siw img { min-width: 600px; width: 100%; border-radius: 16px; }
+
+    .mgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+    .mi img { width: 100%; border-radius: 14px; object-fit: contain; margin-bottom: 8px; }
+    .mlbl { font-size: 12px; color: var(--m); text-align: center; }
+    .msingle { width: 50%; margin: 0 auto; }
+
+    .ns { padding: 32px 36px; background: var(--ow); border-radius: 18px; border: 1px solid var(--b); margin-top: 48px; }
+    .nsl { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--m); font-weight: 500; margin-bottom: 14px; }
+    .nsi { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
+    .nsi:last-child { margin-bottom: 0; }
+    .nsd { width: 6px; height: 6px; border-radius: 50%; background: var(--t); flex-shrink: 0; margin-top: 7px; }
+    .nst { font-size: 14px; color: var(--m); line-height: 1.65; }
+    .cscta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 48px; }
+
+    .lb { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.93); z-index: 9999; align-items: center; justify-content: center; cursor: zoom-out; padding: 20px; }
+    .lb.open { display: flex; }
+    .lb img { max-height: 90vh; max-width: 90vw; border-radius: 12px; object-fit: contain; }
+    .lbc { position: absolute; top: 20px; right: 24px; font-size: 36px; color: white; cursor: pointer; opacity: 0.7; line-height: 1; }
+    .lbc:hover { opacity: 1; }
+    .zm { cursor: zoom-in; }
+
+    .page { display: none; }
+    .page.active { display: block; }
+
+    @media (max-width: 768px) {
+      .nav { padding: 0 20px; height: 56px; }
+      .nav-links { display: none; }
+      .hbg { display: flex; }
+
+      .hero { padding: 80px 20px 48px; }
+      .hbadge { margin-bottom: 20px; }
+      .hstats { gap: 20px; margin-top: 36px; padding-top: 28px; }
+      .snum { font-size: 32px; }
+      .hbtns { flex-direction: column; }
+      .bp, .bg { text-align: center; }
+
+      .ws { padding: 48px 16px; }
+      .cstrip { padding: 28px 16px 0; min-height: 180px; justify-content: flex-start; gap: 10px; }
+      .cstrip img { height: 180px !important; transform: none !important; }
+      .cinfo { padding: 20px 16px; flex-direction: column; align-items: flex-start; }
+      .carr { align-self: flex-end; }
+
+      .ps { padding: 48px 20px; }
+      .pg { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+      .as { padding: 48px 20px; }
+      .ai { grid-template-columns: 1fr; gap: 28px; }
+
+      .ctas { padding: 56px 20px; }
+      .ft { padding: 20px; flex-direction: column; align-items: flex-start; }
+
+      .csh { padding: 80px 20px 48px; }
+      .msstrip { padding: 28px 16px 0; justify-content: flex-start; gap: 10px; }
+      .msstrip img { height: 160px !important; transform: none !important; }
+      .cc { padding: 40px 20px; }
+      .ovg { grid-template-columns: 1fr; gap: 8px; margin-bottom: 36px; }
+
+      .dstrip { padding: 32px 20px; }
+      .ostrip { padding: 32px 20px; }
+
+      .mgrid { grid-template-columns: 1fr; gap: 24px; }
+      .msingle { width: 100%; }
+
+      .ns { padding: 20px; }
+      .cscta { flex-direction: column; }
+    }
+
+    @media (max-width: 400px) {
+      .pg { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lb" id="lb" onclick="closeLB()">
+    <span class="lbc" onclick="closeLB()">×</span>
+    <img id="lb-img" src="" alt="" onclick="event.stopPropagation()" />
+  </div>
+
+  <div class="drawer" id="drawer">
+    <span class="di" onclick="closeDrawer(); scrollToSec('work')">Work</span>
+    <span class="di" onclick="closeDrawer(); scrollToSec('about')">About</span>
+    <a href="mailto:worksid21@gmail.com" class="di" onclick="closeDrawer()">Contact</a>
+    <a href="https://x.com/sidverma211" target="_blank" class="dia" onclick="closeDrawer()">X / Twitter ↗</a>
+    <a href="https://www.linkedin.com/in/siddharthaverma21/" target="_blank" class="dia" onclick="closeDrawer()">LinkedIn ↗</a>
+  </div>
+
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo" onclick="showPage('home'); return false;">
+      <div class="nav-circle"><span>SV</span></div>
+      <span class="nav-name">Siddhartha Verma</span>
+    </a>
+    <div class="nav-links">
+      <span class="nl" onclick="scrollToSec('work')">Work</span>
+      <span class="nl" onclick="scrollToSec('about')">About</span>
+      <a href="mailto:worksid21@gmail.com" class="nl">Contact</a>
+      <a href="https://x.com/sidverma211" target="_blank" class="nla">X ↗</a>
+      <a href="https://www.linkedin.com/in/siddharthaverma21/" target="_blank" class="nla">LinkedIn ↗</a>
+    </div>
+    <button class="hbg" id="hbg" onclick="toggleDrawer()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HOME PAGE -->
+  <div id="page-home" class="page active">
+    <section class="hero">
+      <div class="fi" data-d="1"><div class="hbadge"><div class="hbadge-dot"></div><span>Open to product design internships</span></div></div>
+      <div class="fi" data-d="2"><h1>Designing for people<br />who don't have time<br />to <em>waste.</em></h1></div>
+      <div class="fi" data-d="3"><p class="hdesc">I'm Siddhartha Verma — a self-taught product designer who learns by building real things. Currently documenting my first case study: BarberQ.</p></div>
+      <div class="fi" data-d="4">
+        <div class="hbtns">
+          <a href="#" class="bp" onclick="showPage('casestudy'); return false;">View Case Study →</a>
+          <a href="https://www.figma.com/proto/lgn0CQT75Tc8jVH0PzhwMT/Baber-Wait-Time-Project?node-id=135-75&p=f&viewport=-2633%2C-249%2C0.62&t=Wipe0sAzcggBAcUK-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=116%3A2&page-id=0%3A1" target="_blank" class="bg">View Prototype ↗</a>
+        </div>
+      </div>
+      <div class="fi" data-d="5">
+        <div class="hstats">
+          <div><div class="snum">30</div><div class="slbl">Day project</div></div>
+          <div><div class="snum">5</div><div class="slbl">Hi-fi screens</div></div>
+          <div><div class="snum">2</div><div class="slbl">Interviews</div></div>
+          <div><div class="snum">1</div><div class="slbl">Case study</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ws" id="work">
+      <div class="wi">
+        <div class="fi"><p class="sll">Featured work</p><div class="wh"><h2>One project, done properly.</h2></div></div>
+        <div class="fi" data-d="1">
+          <div class="card" onclick="showPage('casestudy')">
+            <div class="cstrip">
+              <img src="Images/home-mockup.png.webp" alt="Home" class="zm" onclick="event.stopPropagation();openLB(this.src)" style="height:300px;transform:rotate(-4deg) translateY(8px);" />
+              <img src="Images/queue-view-mockup.png.webp" alt="Queue View" class="zm" onclick="event.stopPropagation();openLB(this.src)" style="height:340px;" />
+              <img src="Images/confirmation-mockup.png.webp" alt="Confirmation" class="zm" onclick="event.stopPropagation();openLB(this.src)" style="height:300px;transform:rotate(4deg) translateY(8px);" />
+            </div>
+            <div class="cinfo">
+              <div style="flex:1;">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;">
+                  <span class="tl">UX Case Study</span>
+                  <span style="font-size:12px;color:var(--m);">2025 · 30 days</span>
+                </div>
+                <h3 style="font-family:'Instrument Serif',serif;font-size:32px;font-weight:400;color:var(--dg);margin-bottom:10px;">BarberQ</h3>
+                <p style="font-size:14px;color:var(--m);line-height:1.65;max-width:520px;margin-bottom:0;">A mobile app that lets walk-in customers check live queue status and estimated wait time at barber shops — before leaving home.</p>
+                <div class="ctags"><span class="tag">UX Research</span><span class="tag">Wireframing</span><span class="tag">Interaction Design</span><span class="tag">Visual Design</span><span class="tag">Figma</span></div>
+              </div>
+              <div class="carr">→</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ps">
+      <div class="pi">
+        <div class="fi"><p class="sl">How I work</p><h2 style="font-family:'Instrument Serif',serif;font-size:clamp(28px,4vw,44px);color:var(--dg);font-weight:400;margin-bottom:48px;max-width:480px;">Research first. Design second. Always.</h2></div>
+        <div class="pg">
+          <div class="pc fi" data-d="1"><div class="pn">01</div><div class="pt">Understand</div><div class="pd">User interviews, competitive research, synthesis — understand the real problem before touching Figma.</div></div>
+          <div class="pc fi" data-d="2"><div class="pn">02</div><div class="pt">Define</div><div class="pd">Persona, problem statement, user journey map — define exactly who you're designing for and why.</div></div>
+          <div class="pc fi" data-d="3"><div class="pn">03</div><div class="pt">Structure</div><div class="pd">Paper sketches, wireframes, clickable prototype — solve structure before adding colour.</div></div>
+          <div class="pc fi" data-d="4"><div class="pn">04</div><div class="pt">Design</div><div class="pd">Design system, hi-fi screens, polish — build consistently from a single source of truth.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="as" id="about">
+      <div class="ai">
+        <div class="fi">
+          <p class="sl">About</p>
+          <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(24px,3vw,40px);color:var(--dg);font-weight:400;margin-bottom:20px;line-height:1.2;">Beginner by title.<br />Serious by intention.</h2>
+          <p style="font-size:15px;color:var(--m);line-height:1.8;margin-bottom:14px;">No formal degree. Background in content creation. Taught myself Figma and spent 30 focused days doing UX the right way — real interviews, real iteration, real feedback.</p>
+          <p style="font-size:15px;color:var(--m);line-height:1.8;">BarberQ is my first case study. Built for walk-in customers in Tier 2 Indian cities who are tired of wasting time just to find out how long the wait is.</p>
+          <div class="alinks">
+            <a href="https://x.com/sidverma211" target="_blank" class="alink">X / Twitter →</a>
+            <a href="https://www.linkedin.com/in/siddharthaverma21/" target="_blank" class="alink">LinkedIn →</a>
+            <a href="mailto:worksid21@gmail.com" class="alink">Email →</a>
+          </div>
+        </div>
+        <div class="fi" data-d="2">
+          <div class="aqc">
+            <p class="aq">"I just keep scrolling my phone and wait — no idea how long it'll take."</p>
+            <div class="aqdiv"></div>
+            <p class="aqa">— Ansh, 20 · Barber shop customer<br />This quote became the foundation of BarberQ.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ctas">
+      <div class="fi">
+        <p class="sll">Let's connect</p>
+        <h2>Looking for a design intern?</h2>
+        <p>I'm available for product design internships. Let's talk about what you're building.</p>
+        <a href="mailto:worksid21@gmail.com" class="bl">worksid21@gmail.com →</a>
+      </div>
+    </section>
+
     <footer class="ft">
+      <span class="ftl">Siddhartha Verma · Product Designer · 2025</span>
+      <div class="ftlinks">
+        <a href="https://x.com/sidverma211" target="_blank" class="ftlink">X / Twitter</a>
+        <a href="https://www.linkedin.com/in/siddharthaverma21/" target="_blank" class="ftlink">LinkedIn</a>
+        <a href="mailto:worksid21@gmail.com" class="ftlink">Email</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- CASE STUDY PAGE -->
+  <div id="page-casestudy" class="page">
+
+    <section class="csh">
+      <div class="cshi fi">
+        <button class="csback" onclick="showPage('home')">← Back</button>
+        <div class="cstags"><span class="td">UX Research</span><span class="td">Interaction Design</span><span class="td">Visual Design</span></div>
+        <h1>BarberQ</h1>
+        <p class="cshdesc">A mobile app that lets walk-in customers check live queue status and estimated wait time at barber shops before leaving home.</p>
+      </div>
+    </section>
+
+    <div class="msstrip">
+      <img src="Images/home-mockup.png.webp" alt="Home" class="zm" onclick="openLB(this.src)" style="height:280px;transform:rotate(-5deg) translateY(10px);" />
+      <img src="Images/shop-detail-mockup.png.webp" alt="Shop Detail" class="zm" onclick="openLB(this.src)" style="height:250px;transform:rotate(-2deg) translateY(4px);" />
+      <img src="Images/queue-view-mockup.png.webp" alt="Queue View" class="zm" onclick="openLB(this.src)" style="height:320px;" />
+      <img src="Images/confirmation-mockup.png.webp" alt="Confirmation" class="zm" onclick="openLB(this.src)" style="height:250px;transform:rotate(2deg) translateY(4px);" />
+      <img src="Images/dashboard-mockup.png.webp" alt="Dashboard" class="zm" onclick="openLB(this.src)" style="height:280px;transform:rotate(5deg) translateY(10px);" />
+    </div>
+
+    <!-- ALL CASE STUDY CONTENT IN ONE cc WRAPPER -->
+    <div class="cc">
+
+      <div class="ovg fi">
+        <div class="ovc"><div class="ovl">Timeline</div><div class="ovv">30 days</div></div>
+        <div class="ovc"><div class="ovl">Role</div><div class="ovv">Solo designer</div></div>
+        <div class="ovc"><div class="ovl">Tools</div><div class="ovv">Figma, Pen + Paper</div></div>
+      </div>
+
+      <!-- 01 THE PROBLEM -->
+      <div class="csc fi">
+        <p class="sl">01 — The Problem</p>
+        <h2>The wait that costs you before you even arrive.</h2>
+        <p>The Barber Shop Wait Time App helps walk-in customers in Tier 2 Indian cities check live queue status and estimated wait time at their barber shop before leaving home. It's built for people like Ansh — a 20-year-old student who visits his barber regularly but has no way of knowing the wait time without physically going there.</p>
+        <p>The problem this solves is simple: right now, finding out the wait time costs you the same time as the wait itself. This matters because in cities with limited good barbers, customers can't just switch shops — they wait, blindly, with no information.</p>
+      </div>
+
+      <div class="fi" style="margin-bottom:56px;">
+        <img src="Images/problem-statement.png.png" alt="Problem Statement" class="zm" onclick="openLB(this.src)" style="width:100%;border-radius:16px;" />
+      </div>
+
+      <!-- 02 RESEARCH -->
+      <div class="csc fi">
+        <p class="sl">02 — My Research</p>
+        <h2>Ask about behaviour, not features.</h2>
+        <p>I conducted 2 user interviews with people who regularly visit barber shops. I prepared structured questions focused on behavior and past experience rather than hypothetical feature requests. My goal was to understand how people currently deal with wait times and what coping mechanisms they've developed.</p>
+        <p>I also analyzed 2 competitor apps — Booksy and Unqueue — to understand the existing landscape. The key gap I found: no app combines live queue visibility with real-time wait estimation for walk-in customers.</p>
+      </div>
+
+      <!-- 03 INSIGHTS -->
+      <div class="csc fi">
+        <p class="sl">03 — Key Insights</p>
+        <h2>What the research revealed.</h2>
+        <div class="ilist">
+          <div class="iitem"><span class="inum">01</span><span class="itxt">People don't know the wait time without physically going there — the problem starts before they even leave home.</span></div>
+          <div class="iitem"><span class="inum">02</span><span class="itxt">Uncertainty is more painful than the actual wait — the app needs to make people feel informed and in control.</span></div>
+          <div class="iitem"><span class="inum">03</span><span class="itxt">People have built workarounds like going at off-peak times — the problem is real and consistent but no good solution exists.</span></div>
+          <div class="iitem"><span class="inum">04</span><span class="itxt">This problem is specific to Tier 2 cities where good barbers are limited — the solution needs to work for loyal, repeat customers.</span></div>
+          <div class="iitem"><span class="inum">05</span><span class="itxt">The real pain isn't the wait — it's not knowing when the wait will end.</span></div>
+        </div>
+      </div>
+
+      <!-- 04 DESIGN PROCESS -->
+      <div class="csc fi">
+        <p class="sl">04 — My Design Process</p>
+        <h2>From problem to product.</h2>
+        <div class="psteps">
+          <div class="pstep"><div class="pst">Define</div><div class="psb">I created a user persona — Ansh, a 20-year-old student in Lucknow — based on insights from my user interviews. His behaviors, frustrations, and goals shaped every design decision that followed. From there I wrote a clear problem statement: Ansh needs a way to know the wait time at his barber shop before leaving home because right now he has to physically go there just to find out.</div></div>
+          <div class="pstep"><div class="pst">Ideate</div><div class="psb">I started with rapid paper sketches to explore layout ideas without the pressure of perfection. After settling on a structure I moved to grayscale wireframes in Figma — keeping color and typography out until the layout was solved.</div></div>
+          <div class="pstep"><div class="pst">Prototype</div><div class="psb">I connected all screens into a clickable prototype and tested it with a real user. Watching someone use it silently revealed a critical gap — there was no screen between the shop list and the queue. I added a Shop Detail screen to give users the information they needed before committing to join.</div></div>
+          <div class="pstep"><div class="pst">Design</div><div class="psb">Before touching hi-fi screens I built a design system — color styles, text styles, and reusable components. This kept all 5 screens visually consistent and saved significant time during hi-fi design.</div></div>
+          <div class="pstep"><div class="pst">Iterate</div><div class="psb">After external feedback I updated the border radius across all components and refined spacing. I also added a queue progress bar to the Queue View screen based on a user comment that the wait time should feel live — like a delivery tracker.</div></div>
+        </div>
+      </div>
+
+      <!-- USER FLOW -->
+      <div class="fi" style="margin-bottom:64px;">
+        <p class="sl">User Flow</p>
+        <p style="font-size:15px;color:var(--m);line-height:1.8;margin-bottom:20px;">The app has two separate flows — one for the customer, one for the barber. Keeping them separate was a deliberate decision to avoid complexity and serve each user's single job clearly.</p>
+        <img src="Images/user-flow.png" alt="User Flow" class="zm" onclick="openLB(this.src)" style="width:100%;border-radius:16px;" />
+      </div>
+
+    </div>
+    <!-- END OF FIRST cc WRAPPER -->
+
+    <!-- WIREFRAMES STRIP -->
+    <div class="ostrip">
+      <div class="osi fi">
+        <p class="osl">Wireframes → Hi-Fi progression</p>
+        <div class="siw"><img src="Images/wireframes.png.webp" alt="Wireframes" class="zm" onclick="openLB(this.src)" /></div>
+      </div>
+    </div>
+
+    <!-- ANNOTATED STRIP -->
+    <div class="dstrip">
+      <div class="dsi fi">
+        <p class="dsl">Annotated design decisions</p>
+        <div class="siw"><img src="Images/annontated-screens.png.png" alt="Annotated" class="zm" onclick="openLB(this.src)" /></div>
+      </div>
+    </div>
+
+    <!-- FINAL SOLUTION — second cc wrapper -->
+    <div class="cc">
+
+      <div class="csc fi">
+        <p class="sl">05 — Final Solution</p>
+        <h2>5 screens. One clear problem solved.</h2>
+        <p>The core customer flow works like this: the Home screen shows nearby barber shops with live wait times and distance at a glance. Tapping a shop opens the Shop Detail screen where Ansh sees the full picture — estimated wait, people ahead, barbers active, address, and opening hours. From there he taps Join Queue which takes him to the Queue View — where the wait time is the dominant element, displayed large and updated live. After confirming he lands on the Confirmation screen with his queue number, estimated wait, and a notification promise.</p>
+        <p>Unlike Booksy which only serves planned appointments, and Unqueue which shows walk-in options but goes silent after booking — BarberQ keeps Ansh informed from the moment he checks his phone to the moment he walks in.</p>
+        <p><strong>Success metric:</strong> BarberQ succeeds if the queue join rate increases — meaning users who open the app actually tap Join Queue, not just check the wait time and leave.</p>
+      </div>
+
+      <div class="fi">
+        <div class="mgrid">
+          <div class="mi"><img src="Images/home-mockup.png.webp" alt="Home" class="zm" onclick="openLB(this.src)" /><div class="mlbl">Home Screen</div></div>
+          <div class="mi"><img src="Images/shop-detail-mockup.png.webp" alt="Shop Detail" class="zm" onclick="openLB(this.src)" /><div class="mlbl">Shop Detail</div></div>
+          <div class="mi"><img src="Images/queue-view-mockup.png.webp" alt="Queue View" class="zm" onclick="openLB(this.src)" /><div class="mlbl">Queue View</div></div>
+          <div class="mi"><img src="Images/confirmation-mockup.png.webp" alt="Confirmation" class="zm" onclick="openLB(this.src)" /><div class="mlbl">Queue Confirmation</div></div>
+        </div>
+        <div class="msingle mi" style="margin-top:20px;">
+          <img src="Images/dashboard-mockup.png.webp" alt="Barber Dashboard" class="zm" onclick="openLB(this.src)" style="width:100%;max-width:360px;margin:0 auto;" />
+          <div class="mlbl" style="margin-top:12px;">Barber Dashboard</div>
+        </div>
+      </div>
+
+      <div class="ns fi">
+        <div class="nsl">What I'd do next</div>
+        <div class="nsi"><div class="nsd"></div><div class="nst">Design the barber onboarding flow — how a shop owner sets up and manages their profile</div></div>
+        <div class="nsi"><div class="nsd"></div><div class="nst">Explore a live notification screen that updates Ansh's position in real time</div></div>
+        <div class="nsi"><div class="nsd"></div><div class="nst">Test with more users in Tier 2 cities to validate the design assumptions</div></div>
+        <div class="nsi"><div class="nsd"></div><div class="nst">AI-powered virtual try-on — allowing customers to preview haircut styles while waiting in the queue</div></div>
+      </div>
+
+      <div class="cscta fi">
+        <a href="https://www.figma.com/proto/lgn0CQT75Tc8jVH0PzhwMT/Baber-Wait-Time-Project?node-id=135-75&p=f&viewport=-2633%2C-249%2C0.62&t=Wipe0sAzcggBAcUK-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=116%3A2&page-id=0%3A1" target="_blank" class="bp">View Live Prototype ↗</a>
+        <a href="mailto:worksid21@gmail.com" class="bg">Get in touch</a>
+      </div>
+
+    </div>
+
+    <footer class="ft">
+      <span class="ftl">Siddhartha Verma · Product Designer · 2025</span>
+      <button onclick="showPage('home')" style="background:transparent;border:none;font-size:13px;color:var(--m);cursor:pointer;font-family:inherit;">← Back to portfolio</button>
+    </footer>
+
+  </div>
+
+  <script>
+    function showPage(p) {
+      document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
+      document.getElementById('page-' + p).classList.add('active');
+      window.scrollTo(0,0);
+      closeDrawer();
+      initFI();
+    }
+    function scrollToSec(id) {
+      showPage('home');
+      setTimeout(() => { const el = document.getElementById(id); if (el) el.scrollIntoView({behavior:'smooth'}); }, 100);
+    }
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('nav');
+      window.scrollY > 40 ? nav.classList.add('scrolled') : nav.classList.remove('scrolled');
+    });
+    function toggleDrawer() {
+      document.getElementById('drawer').classList.toggle('open');
+      document.getElementById('hbg').classList.toggle('open');
+    }
+    function closeDrawer() {
+      document.getElementById('drawer').classList.remove('open');
+      document.getElementById('hbg').classList.remove('open');
+    }
+    function initFI() {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('v'); obs.unobserve(e.target); } });
+      }, {threshold: 0.1});
+      document.querySelectorAll('.fi:not(.v)').forEach(el => obs.observe(el));
+    }
+    function openLB(src) {
+      document.getElementById('lb-img').src = src;
+      document.getElementById('lb').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLB() {
+      document.getElementById('lb').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLB(); });
+    initFI();
+  </script>
+
+</body>
+</html>
       <span class="ftl">Siddhartha Verma · Product Designer · 2025</span>
       <div class="ftlinks">
         <a href="https://x.com/sidverma211" target="_blank" class="ftlink">X / Twitter</a>
